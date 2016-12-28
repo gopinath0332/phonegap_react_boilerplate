@@ -1,4 +1,5 @@
 var debug = process.env.NODE_ENV !== "production";
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 // var debug = false;
 var webpack = require('webpack');
 var path = require('path');
@@ -12,6 +13,9 @@ module.exports = {
     entry: PATHS.app + "/js/Demo.jsx",
     module: {
         loaders: [{
+            test: /\.less$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+        }, {
             test: /\.css$/,
             loader: "style!css"
         }, {
@@ -36,7 +40,8 @@ module.exports = {
     plugins: debug ? [new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery"
-    })] : [
+    }), new ExtractTextPlugin("../css/app.css")] : [
+        new ExtractTextPlugin("../css/app.css"),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
