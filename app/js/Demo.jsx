@@ -4,8 +4,8 @@ import "../css/app.less";
 
 
 const $ = require("jquery");
-// const React = require("react");
-// const ReactDOM = require("react-dom");
+const React = require("react");
+const ReactDOM = require("react-dom");
 // const [targetNode] = $("#content");
 var targetNode = $("#content")[0];
 
@@ -36,8 +36,5 @@ var Counter = React.createClass({
 });
 
 
-ReactDOM.render(
-   <Counter></Counter>, targetNode);
+ReactDOM.render(<Counter></Counter>, targetNode);
 
-
-// ReactDOM.render(<span className="glyphicon glyphicon-play btn-circle"></span>,targetNode);
