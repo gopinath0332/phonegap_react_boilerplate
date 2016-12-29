@@ -34,7 +34,8 @@
     "babel-preset-stage-0": "^6.5.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "less": "^2.7.1",
-    "less-loader": "^2.2.3"
+    "less-loader": "^2.2.3",
+    "lodash": "^4.17.3"
   },
   "homepage": "https://github.com/gopinath0332/Phonegap",
   "keywords": [
