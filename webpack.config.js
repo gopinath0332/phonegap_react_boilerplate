@@ -37,6 +37,9 @@ module.exports = {
         path: PATHS.build + "/js",
         filename: "app.js"
     },
+    resolve: {
+        extensions: ['', '.js', '.jsx'],
+    },
     plugins: debug ? [new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery"
